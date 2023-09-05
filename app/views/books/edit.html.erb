@@ -1,2 +1,31 @@
-<h1>Books#edit</h1>
-<p>Find me in app/views/books/edit.html.erb</p>
+<%= link_to('Back to collection', books_path, :class => 'back-link') %>
+
+<div class="books edit">
+    <h2>Edit Book<h2>
+    <% # task_path(@task), method: 'patch' %>
+
+    <%= form_for(@book) do |f| %>
+        <table summary="Book form fields">
+          <tr>
+            <th>Name</th>
+            <td><%= f.text_field(:name) %></td>
+          </tr>
+          <tr>
+            <th>Description</th>
+            <td><%= f.text_area(:description) %></td>
+          </tr>
+          <tr>
+            <th>Author</th>
+            <td><%= f.text_field(:author) %></td>
+          </tr>
+          <tr>
+            <th>Price($)</th>
+            <td><%= f.number_field(:price) %></td>
+          </tr>
+        </table>
+
+        <div class="form-buttons">
+            <%= f.submit("Confirm Edit Book") %>
+        </div>
+    <% end %>
+<div>

@@ -3,22 +3,24 @@
 <div class="books index">
 <h2>Books</h2>
 
-<%= link_to("Add New Book", '#', class: 'action new') %>
+<%= link_to("Add New Book", new_book_path, class: 'action new') %>
 
 <table class="listing" summary="Book list" style="width: 100%";>
     <tr class="header">
       <th>Book</th>
-      <th>Genre</th>
+      <th>Author</th>
+      <th>Price ($)</th>
       <th>Actions</th>
     </tr>
     <% @books.each do |book| %>
     <tr>
       <td style="text-align: center;"><%=book.name%></td>
-      <td style="text-align: center;"><%=book.category&.name || '-' %></td>
+      <td style="text-align: center;"><%=book.author%></td>
+      <td style="text-align: center;"><%=book.price%></td>
       <td style="text-align: center;" class="actions">
-        <%= link_to("Show", '#', class: 'action show') %>
-        <%= link_to("Edit", '#', class: 'action edit') %>
-        <%= link_to("Delete", '#', class: 'action delete') %>
+        <%= link_to("Show", book_path(book), class: 'action show') %>
+        <%= link_to("Edit", edit_book_path(book), class: 'action edit') %>
+        <%= link_to("Delete", delete_book_path(book), class: 'action delete') %>
       </td>
     </tr>
     <% end %>
