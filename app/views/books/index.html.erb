@@ -1,14 +1,26 @@
 <%= link_to('Back to Homepage', {controller: 'main', action: 'index'}) %><br />
 
+<div class="books index">
+<h2>Books</h2>
 
-<h1>Books Page</h1>
+<%= link_to("Add New Book", '#', class: 'action new') %>
 
-<% if @page == 1 %>
-    <h2>Book List</h2>
-<% end %>
-
-<ul>
-<% @books.each do |book| %>
-   <li><%= book %></li>
-<% end %>
-</ul>
+<table class="listing" summary="Book list" style="width: 100%";>
+    <tr class="header">
+      <th>Book</th>
+      <th>Genre</th>
+      <th>Actions</th>
+    </tr>
+    <% @books.each do |book| %>
+    <tr>
+      <td style="text-align: center;"><%=book.name%></td>
+      <td style="text-align: center;"><%=book.category&.name || '-' %></td>
+      <td style="text-align: center;" class="actions">
+        <%= link_to("Show", '#', class: 'action show') %>
+        <%= link_to("Edit", '#', class: 'action edit') %>
+        <%= link_to("Delete", '#', class: 'action delete') %>
+      </td>
+    </tr>
+    <% end %>
+   </table>
+</div>

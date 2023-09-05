@@ -1,7 +1,5 @@
-class BooksController < ApplicationController
+class CategoriesController < ApplicationController
   def index
-    # @page = params[:page].to_i
-    @books = Book.order(:id)
   end
 
   def show
@@ -24,5 +22,5 @@ class BooksController < ApplicationController
 
   def destroy
   end
-  
+
 end
