@@ -1,0 +1,14 @@
+<%= link_to('Back to Homepage', {controller: 'main', action: 'index'}) %><br />
+
+
+<h1>Books Page</h1>
+
+<% if @page == 1 %>
+    <h2>Book List</h2>
+<% end %>
+
+<ul>
+<% @books.each do |book| %>
+   <li><%= book %></li>
+<% end %>
+</ul>
