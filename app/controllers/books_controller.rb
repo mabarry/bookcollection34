@@ -15,9 +15,10 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
     if @book.save
-      redirect_to books_path
+      redirect_to books_path, flash: { success: 'Book created successfully.' }
     else
-      render('new') # New action is not being called here
+      flash.now[:error] = "Cannot create book. Please fill in all forms."
+      render 'new'
     end
   end
 
@@ -51,7 +52,7 @@ class BooksController < ApplicationController
   end
 
   def book_params
-    params.require(:book).permit(:name, :author, :description, :price)
+    params.require(:book).permit(:name, :author, :published_date, :price)
   end
   
 end
