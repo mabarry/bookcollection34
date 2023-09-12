@@ -77,7 +77,7 @@ test:
 # URL environment variable explicitly:
 #
   production:
-    url: <%= ENV["postgres://qpxjjjyopfmcpz:b011704e30ac61a9ff0d40174c1eeb93f877f8ed409e63a0efe3b7046474da98@ec2-34-236-103-63.compute-1.amazonaws.com:5432/damvq707v0d3pr"] %>
+    url: <%= ENV["DATABASE_URL"] %>
 #
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
