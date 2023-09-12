@@ -10,6 +10,7 @@
       <th>Book</th>
       <th>Author</th>
       <th>Price ($)</th>
+      <th>Published Date</th>
       <th>Actions</th>
     </tr>
     <% @books.each do |book| %>
@@ -17,6 +18,7 @@
       <td style="text-align: center;"><%=book.name%></td>
       <td style="text-align: center;"><%=book.author%></td>
       <td style="text-align: center;"><%=book.price%></td>
+      <td style="text-align: center;"><%=book.published_date%></td>
       <td style="text-align: center;" class="actions">
         <%= link_to("Show", book_path(book), class: 'action show') %>
         <%= link_to("Edit", edit_book_path(book), class: 'action edit') %>

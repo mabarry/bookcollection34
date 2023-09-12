@@ -1,7 +1,7 @@
 <%= link_to('Back to collection', books_path, :class => 'back-link') %>
 
 <div class="books new">
-    <h2>Create Book<h2>
+    <h2>Create Book</h2>
 
     <%= form_for(@book) do |f| %>
         <table summary="Book form fields">
@@ -14,8 +14,8 @@
             <td><%= f.text_field(:author) %></td>
           </tr>
           <tr>
-            <th>Description</th>
-            <td><%= f.text_area(:description) %></td>
+            <th>Published Date</th>
+            <td><%= f.date_field(:published_date) %></td>
           </tr>
           <tr>
             <th>Price($)</th>
