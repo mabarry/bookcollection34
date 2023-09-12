@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
+  resources :user_books
+  resources :users
+  root 'user_books#index'
   
-  root "main#index" # makes main/index the homepage and default starting page of the app
+  # root "main#index" # makes main/index the homepage and default starting page of the app
 
   match 'about', to: "main#about", via: :get # when '/about' added at end of port, routes to about page
   match 'hello', to: 'main#hello', via: :get
